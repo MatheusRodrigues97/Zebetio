@@ -19,27 +19,29 @@ def placaBD():
     py.moveTo (x= -747, y =479, duration=0.25)
     py.click(clicks=2)
     py.hotkey('ctrl', 'v')
-    tm.sleep(3)
-
+    tm.sleep(4)
     py.press('esc')
     py.click(x=-760,y=471)
     tm.sleep(0.65)
     py.press('esc')
 
-    py.click(x=-680,y=562)
-    
+    py.hotkey('alt', 'tab')
+    py.press('right')
+    py.hotkey('ctrl', 'c')
+    py.hotkey('alt', 'tab')
 
+    py.click(x=-680,y=562)
     py.moveTo (x=-746, y=625, duration=0.25)
     py.click(clicks=2)
     py.hotkey('ctrl', 'v')
-    tm.sleep(3)
+    tm.sleep(4)
 
     py.press('esc')
     tm.sleep(0.65)
     py.click(x=-516,y=633)
     py.press('esc')
 
-    py.press('left')
+    py.press('left', presses=4)
     py.press('enter')
     py.hotkey('ctrl', 'v')
     tm.sleep(0.65)
@@ -51,9 +53,11 @@ def placaBD():
     
     py.hotkey('alt', 'tab')
     py.press('right')
-    py.press('1')
+    py.write("feito")
     py.press('down')
-    py.press('left',presses=1)
+    py.press('left',presses=2)
+
+    return None
 
 def atualizacao_valor():
 
@@ -97,10 +101,10 @@ def main(y):
     n = 0 
     
     
-    """py.displayMousePosition()"""
+    py.displayMousePosition()
 
     while n < y:
-        placaBD()
+        """placaBD()"""
         """atualizacao_valor()"""
 
         n+=1
