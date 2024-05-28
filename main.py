@@ -3,19 +3,38 @@ LINHA = '*'*30
 
 
 def inserir_placas():
-    pass
+    menu_banco()
 
 def ler_arquivo():
-    pass
+    menu_banco()
 
 def atualizar_placas_carros():
-    pass
+    menu_banco()
 
 def validar_dados_base():
-    pass
+   menu_banco()
 
 def encerrar_bot():
-    pass
+    os.system('clear')
+    os.system('exit')
+
+def menu_banco():
+    '''Menu para cada banco separado do sistema Notion'''
+
+    os.system('clear')
+    print(LINHA)
+    print('Validar dados do Banco de dados')
+    print(LINHA)
+
+    print('\nseleciona qual banco vai mexer')
+    print('1- Banco de expedição')
+    print('2- Banco eletronico ')
+    print('3- Banco ipva')
+    print('4- Voltar para menu principal \n')
+
+    opcao = int(input('Digite numero da opção desejada :'))
+    if opcao == 4 : return main()
+    return opcao
 
 def opcoes_menu():
     '''Função para realizar acionamento do BOT'''
@@ -30,13 +49,30 @@ def opcoes_menu():
     print('4 -Validar os dados da base')
     print('5 -Encerrar Zebetio')
 
-    opcao = int(input('\nDigite a opção desejada :'))
+    opcao = int(input('\nDigite numero da opção desejada :'))
 
-    return opcao
+    return chamada_funcoes(opcao)
+
+def chamada_funcoes(opcao):
+    '''Funcão para fazer a chamada das funções e suas logicas '''
+
+    match opcao :
+        case 1:
+            inserir_placas()
+        case 2:
+            ler_arquivo()
+        case 3:
+            atualizar_placas_carros()
+        case 4:
+            validar_dados_base()
+        case 5:
+            encerrar_bot()
+        case _:
+            print('Opção fora do escopo de selção')
 
 
 def main ():
-    opcoes_menu()
+    selecao = opcoes_menu()
 
 
 main()
