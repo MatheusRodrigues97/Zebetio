@@ -1,3 +1,4 @@
+import bot 
 import os
 LINHA = '*'*30
 
@@ -9,7 +10,10 @@ def ler_arquivo():
     menu_banco()
 
 def atualizar_placas_carros():
-    menu_banco()
+
+    respota_banco = menu_banco()
+    
+    bot.atualizacao_valor()
 
 def validar_dados_base():
    menu_banco()
